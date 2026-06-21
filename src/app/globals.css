@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+:root {
+  --background: #fafbff;
+  --foreground: #0f172a;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+  /* Brand Colors */
+  --brand-cyan: #00E5FF;
+  --brand-blue: #6366F1;
+  --brand-pink: #FF00FF;
+}
+
+.dark {
+  --background: #06060c;
+  --foreground: #f1f5f9;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  /* Brand Colors */
+  --brand-cyan: #00E5FF;
+  --brand-blue: #6366F1;
+  --brand-pink: #FF00FF;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-pink: var(--brand-pink);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
+
+/* Global scroll behavior */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Smooth theme switching */
+.theme-transition * {
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, shadow 0.4s ease, backdrop-filter 0.4s ease !important;
+}
+
+/* Lenis smooth scrolling compatibility */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom visual utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-light {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Fluid typography and gradients */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Brand specific utilities */
+.brand-text-gradient {
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-blue) 50%, var(--brand-pink) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.brand-bg-gradient {
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-blue) 50%, var(--brand-pink) 100%);
+}
+
+.brand-glow {
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5), 0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+.hover-brand-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-brand-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.brand-border-gradient {
+  position: relative;
+  background: var(--background);
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+.brand-border-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-blue) 50%, var(--brand-pink) 100%);
+}
