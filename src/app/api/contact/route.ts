@@ -157,23 +157,42 @@ export async function POST(req: NextRequest): Promise<NextResponse<ContactApiRes
     }
 
     // 5. Establish Sender and Recipient Configuration
-    const senderEmail = process.env.CONTACT_SENDER_EMAIL || "onboarding@resend.dev";
-    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL || "nexora280@gmail.com";
+    // Sanitize in case .env.local has extra quotes, trailing spaces, or pre-formatted <email@domain.com> brackets
+    const rawSenderEnv = (process.env.CONTACT_SENDER_EMAIL || "onboarding@resend.dev").trim().replace(/['"]/g, "");
+    const senderBracketMatch = rawSenderEnv.match(/<([^>]+)>/);
+    let cleanSenderEmail = senderBracketMatch ? senderBracketMatch[1].trim() : rawSenderEnv;
 
-    // In Resend Sandbox mode (when using onboarding@resend.dev), Resend strictly blocks emails sent to any address 
-    // other than the verified account owner (nexoraswweb@gmail.com).
-    // To allow you to preview BOTH the Team Briefing and the Visitor Auto-Reply without terminal errors during local testing,
-    // we automatically route the Auto-Reply to your verified recipientEmail when in sandbox mode!
-    const isSandbox = senderEmail.includes("onboarding@resend.dev");
-    const autoReplyRecipient = isSandbox ? recipientEmail : email;
-    const formattedSender = isSandbox ? "onboarding@resend.dev" : `Nexora Engineering <${senderEmail}>`;
+    // If someone put just their verified domain name in .env.local (e.g., "nexorasw.com") instead of a full email
+    // address (e.g., "contact@nexorasw.com"), automatically prepend "contact@" so Resend receives a valid email format!
+    if (!cleanSenderEmail.includes("@") && cleanSenderEmail.includes(".")) {
+      console.warn(`⚠️ [RESEND SENDER NOTICE]: CONTACT_SENDER_EMAIL (${cleanSenderEmail}) is missing an email prefix. Automatically prepending "contact@" to make it a valid email address (${`contact@${cleanSenderEmail}`})!`);
+      cleanSenderEmail = `contact@${cleanSenderEmail}`;
+    }
+
+    const rawRecipientEnv = (process.env.CONTACT_RECIPIENT_EMAIL || "nexora280@gmail.com").trim().replace(/['"]/g, "");
+    const recipientBracketMatch = rawRecipientEnv.match(/<([^>]+)>/);
+    const cleanRecipientEmail = recipientBracketMatch ? recipientBracketMatch[1].trim() : rawRecipientEnv;
+
+    // In Resend Sandbox mode (when using onboarding@resend.dev), or if someone accidentally puts a personal Gmail/Yahoo
+    // address into CONTACT_SENDER_EMAIL (which Resend forbids sending FROM due to DMARC policies),
+    // we automatically switch to Sandbox Mode and route the Auto-Reply to your cleanRecipientEmail!
+    const isPersonalDomain = /@(gmail|yahoo|outlook|hotmail|icloud|aol|proton|zoho)\./i.test(cleanSenderEmail);
+    const isSandbox = cleanSenderEmail.includes("onboarding@resend.dev") || isPersonalDomain;
+
+    if (isPersonalDomain) {
+      console.warn(`⚠️ [RESEND SENDER NOTICE]: You cannot send emails FROM personal providers (${cleanSenderEmail}). Automatically defaulting sender to onboarding@resend.dev for local sandbox testing!`);
+    }
+
+    const autoReplyRecipient = isSandbox ? cleanRecipientEmail : email;
+    const formattedSender = isSandbox ? "onboarding@resend.dev" : `Nexora Engineering <${cleanSenderEmail}>`;
+
 
     // 6. Execute Dual Email Transmission via Resend
     const [teamResult, clientResult] = await Promise.all([
       // Email 1: Alert to Nexora Engineering Team
       sendEmail({
         from: formattedSender,
-        to: recipientEmail,
+        to: cleanRecipientEmail,
         replyTo: email,
         subject: `[Project Scope] ${subject} - ${name}`,
         react: React.createElement(ProjectInquiry, { name, email, subject, message }),
