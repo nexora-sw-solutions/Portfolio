@@ -26,24 +26,24 @@ export function Footer() {
     <footer className="relative bg-slate-50 dark:bg-slate-950/80 pt-20 pb-12 overflow-hidden">
       {/* Top accent line */}
       <div className="absolute top-0 left-0 w-full h-1 brand-bg-gradient opacity-80" />
-      
+
       {/* Background radial glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full brand-bg-gradient opacity-[0.03] dark:opacity-[0.08] blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-slate-200 dark:border-slate-850">
-          
+
           {/* Column 1: Brand details */}
           <div className="flex flex-col gap-6">
-            <a 
-              href="#home" 
+            <a
+              href="#home"
               onClick={(e) => handleLinkClick(e, "#home")}
               className="flex items-center gap-2.5 group w-fit"
             >
               <div className="relative flex items-center justify-center p-2 rounded-xl bg-slate-950/90 dark:bg-transparent shadow-lg shadow-brand-blue/10 group-hover:brand-glow transition-all duration-300">
-                <img 
-                  src="/images/Logo/Logo_Rectangle.png" 
-                  alt="Nexora Solutions" 
+                <img
+                  src="/images/Logo/Logo_Rectangle.png"
+                  alt="Nexora Solutions"
                   className="h-8 w-auto object-contain"
                 />
               </div>
@@ -52,17 +52,17 @@ export function Footer() {
               Nexora is a premium software engineering and digital solutions company crafting robust, interactive platforms that help businesses scale.
             </p>
             <div className="flex items-center gap-3">
-              <a 
-                href={companyDetails.contact.socials[0].url} 
-                target="_blank" 
+              <a
+                href={companyDetails.contact.socials[0].url}
+                target="_blank"
                 rel="noreferrer"
                 className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
                 aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
               </a>
-              <a 
-                href={companyDetails.contact.socials[1].url} 
+              <a
+                href={companyDetails.contact.socials[1].url}
                 onClick={(e) => {
                   e.preventDefault();
                   triggerSocialNotification();
@@ -72,8 +72,8 @@ export function Footer() {
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a 
-                href={companyDetails.contact.socials[2].url} 
+              <a
+                href={companyDetails.contact.socials[2].url}
                 onClick={(e) => {
                   e.preventDefault();
                   triggerSocialNotification();
@@ -133,7 +133,7 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-4">
               <li>
-                <a 
+                <a
                   href={`mailto:${companyDetails.contact.email}`}
                   className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-400 hover:text-primary transition-colors duration-200"
                 >
@@ -142,7 +142,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href={`tel:${companyDetails.contact.phone}`}
                   className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-400 hover:text-primary transition-colors duration-200"
                 >
@@ -160,7 +160,10 @@ export function Footer() {
 
         {/* Bottom copyright & scroll-to-top */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 text-xs text-slate-700 dark:text-slate-500">
-          <p>© {new Date().getFullYear()} Nexora. All rights reserved. Designed for digital transformation.</p>
+          <div className="flex flex-col gap-1.5 text-center sm:text-left leading-relaxed">
+            <p>© {new Date().getFullYear()} Nexora. All rights reserved. Designed for digital transformation.</p>
+            <p>Demonstration &amp; Testing Phase: Non-Commercial Project</p>
+          </div>
           <button
             onClick={handleScrollToTop}
             className="group flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 hover:bg-primary dark:hover:bg-primary text-slate-800 dark:text-slate-400 hover:text-white dark:hover:text-white transition-all duration-300 shadow-sm cursor-pointer"
