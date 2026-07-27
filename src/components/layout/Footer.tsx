@@ -6,6 +6,7 @@ import { services } from "@/data/services";
 import { navLinks } from "./Navbar";
 import { Mail, Phone, Globe, ArrowUp } from "lucide-react";
 import { Github, Linkedin, Twitter } from "@/components/shared/SocialIcons";
+import { SocialNotificationToast, triggerSocialNotification } from "@/components/shared/SocialNotificationToast";
 import { cn } from "@/lib/utils";
 
 export function Footer() {
@@ -62,18 +63,22 @@ export function Footer() {
               </a>
               <a 
                 href={companyDetails.contact.socials[1].url} 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerSocialNotification();
+                }}
+                className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a 
                 href={companyDetails.contact.socials[2].url} 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerSocialNotification();
+                }}
+                className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4" />
@@ -167,6 +172,7 @@ export function Footer() {
           </button>
         </div>
       </div>
+      <SocialNotificationToast />
     </footer>
   );
 }

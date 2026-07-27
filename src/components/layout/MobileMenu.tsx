@@ -6,6 +6,7 @@ import { navLinks } from "./Navbar";
 import { cn } from "@/lib/utils";
 import { Mail, Phone } from "lucide-react";
 import { Github, Linkedin, Twitter } from "@/components/shared/SocialIcons";
+import { triggerSocialNotification } from "@/components/shared/SocialNotificationToast";
 import { companyDetails } from "@/data/company";
 import { useSmoothScroll } from "@/providers/SmoothScrollProvider";
 
@@ -134,17 +135,25 @@ export function MobileMenu({ onClose, onLinkClick, activeSection }: MobileMenuPr
           </a>
           <a 
             href={companyDetails.contact.socials[1].url} 
-            target="_blank" 
-            rel="noreferrer"
-            className="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 transition-all duration-300"
+            onClick={(e) => {
+              e.preventDefault();
+              triggerSocialNotification();
+              onClose();
+            }}
+            className="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 transition-all duration-300 cursor-pointer"
+            aria-label="LinkedIn"
           >
             <Linkedin className="w-4.5 h-4.5" />
           </a>
           <a 
             href={companyDetails.contact.socials[2].url} 
-            target="_blank" 
-            rel="noreferrer"
-            className="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 transition-all duration-300"
+            onClick={(e) => {
+              e.preventDefault();
+              triggerSocialNotification();
+              onClose();
+            }}
+            className="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/50 transition-all duration-300 cursor-pointer"
+            aria-label="Twitter"
           >
             <Twitter className="w-4.5 h-4.5" />
           </a>

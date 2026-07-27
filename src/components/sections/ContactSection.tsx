@@ -7,21 +7,14 @@ import { ScrollReveal } from "../shared/ScrollReveal";
 import { Mail, Phone, Globe, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(3, { message: "Subject must be at least 3 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+import { contactFormSchema, ContactFormValues, ContactApiResponse } from "@/lib/schemas/contact";
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+  const [renderTime] = useState(() => Date.now());
 
   const {
     register,
@@ -34,11 +27,32 @@ export function ContactSection() {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    reset();
+    setServerError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "x-form-render-time": renderTime.toString(),
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result: ContactApiResponse = await response.json();
+
+      if (!response.ok || !result.success) {
+        setServerError(result.message || "Failed to submit project scope. Please try again.");
+      } else {
+        setIsSubmitted(true);
+        reset();
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setServerError("A network error occurred. Please email us directly at nexora280@gmail.com.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -229,6 +243,30 @@ export function ContactSection() {
                           <span className="text-[10px] font-bold text-red-500 mt-0.5">{errors.message.message}</span>
                         )}
                       </div>
+
+                      {/* Invisible honeypot field for anti-spam bot detection */}
+                      <input
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        {...register("confirm_email_address")}
+                        className="opacity-0 absolute -left-[9999px] top-0 h-0 w-0 z-[-1] pointer-events-none"
+                      />
+
+                      {/* Server Error Banner */}
+                      {serverError && (
+                        <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold flex items-center justify-between gap-2">
+                          <span>⚠️ {serverError}</span>
+                          <button
+                            type="button"
+                            onClick={() => setServerError(null)}
+                            className="hover:underline text-[10px] uppercase tracking-wider cursor-pointer font-extrabold shrink-0"
+                          >
+                            Dismiss
+                          </button>
+                        </div>
+                      )}
 
                       {/* Submit CTA */}
                       <button
