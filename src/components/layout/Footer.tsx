@@ -42,7 +42,7 @@ export function Footer() {
             >
               <div className="relative flex items-center justify-center p-2 rounded-xl bg-slate-950/90 dark:bg-transparent shadow-lg shadow-brand-blue/10 group-hover:brand-glow transition-all duration-300">
                 <img
-                  src="/images/Logo/Logo_Rectangle.png"
+                  src="/images/Logo/Complete%20Logo%20-%20White.png"
                   alt="Nexora Solutions"
                   className="h-8 w-auto object-contain"
                 />

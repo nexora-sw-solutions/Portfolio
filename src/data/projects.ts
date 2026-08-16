@@ -9,6 +9,7 @@ export interface ProjectItem {
   challenge: string;
   solution: string;
   highlights: string[];
+  github?: string;
 }
 
 export const projects: ProjectItem[] = [
@@ -28,5 +29,23 @@ export const projects: ProjectItem[] = [
       "Secure local database encryption (256-bit AES via SQLCipher)",
       "Automated client notifications and background delta updates"
     ]
+  },
+  {
+    id: "apexdrive-crm",
+    title: "ApexDrive CRM",
+    category: "Operations",
+    description: "A high-performance CRM built for automotive businesses, featuring AI-powered inventory tracking and autonomous customer engagement.",
+    image: "/images/projects/Apex/dashboard.webp",
+    technologies: ["React 19", "TypeScript", "Tailwind CSS", "Django", "PostgreSQL", "n8n", "OpenAI API", "EasyOCR"],
+    impact: "Automated manual data entry and enabled 24/7 autonomous customer inquiries and test-drive scheduling.",
+    challenge: "Car dealerships face inefficiencies with manual vehicle data entry and struggle to handle customer inquiries and test-drive bookings outside of regular business hours.",
+    solution: "Integrated an EasyOCR module for automatic number plate recognition (ANPR) from vehicle images, reducing manual data entry. Implemented an Autonomous Sales Agent powered by n8n and OpenAI to handle inquiries and schedule test drives 24/7.",
+    highlights: [
+      "Automatic Number Plate Recognition (ANPR) with EasyOCR",
+      "Autonomous 24/7 SDR Agent powered by n8n & OpenAI",
+      "Real-time tracking of vehicle stock, status, and pricing",
+      "Interactive data visualization with Recharts and React Big Calendar"
+    ],
+    github: "https://github.com/rahulkavishka/ApexDrive-Bot"
   }
 ];

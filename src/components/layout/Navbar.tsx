@@ -80,7 +80,7 @@ export function Navbar() {
           >
             <div className="relative flex items-center justify-center p-1.5 rounded-lg bg-slate-950/90 dark:bg-transparent shadow-md shadow-brand-blue/10 group-hover:brand-glow transition-all duration-300">
               <img 
-                src="/images/Logo/Logo_Rectangle.png" 
+                src="/images/Logo/Logo%20Horizontal%20-%20White.png" 
                 alt="Nexora Solutions" 
                 className="h-7 w-auto object-contain"
               />

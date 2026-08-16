@@ -35,12 +35,12 @@ export const companyDetails = {
   ] as CompanyValue[],
 
   contact: {
-    email: "nexora280@gmail.com",
+    email: "contact@mail.nexorasoftwaresolution.com",
     phone: "+94 72 431 4001",
     address: "Based in Kandy, Sri Lanka • Serving clients worldwide",
     mapCoords: { lat: 7.2906, lng: 80.6337 }, // Kandy, Sri Lanka
     socials: [
-      { platform: "GitHub", url: "https://github.com/nexora-dev", icon: "Github" },
+      { platform: "GitHub", url: "https://github.com/nexora-sw-solutions", icon: "Github" },
       { platform: "LinkedIn", url: "https://linkedin.com/company/nexora-dev", icon: "Linkedin" },
       { platform: "Twitter", url: "https://twitter.com/nexora_dev", icon: "Twitter" }
     ]
