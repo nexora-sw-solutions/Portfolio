@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/Logo/Union%20Botom.png",
   },
 };
 
