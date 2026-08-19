@@ -72,7 +72,7 @@ export function TestimonialsSection() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="w-full max-w-xl p-8 sm:p-12 rounded-3xl border border-slate-200/60 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/30 backdrop-blur-md shadow-lg flex flex-col items-center gap-6"
+              className="w-full max-w-xl p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg flex flex-col items-center gap-6"
             >
               {/* Animated hand-shake or feedback icon */}
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary border border-primary/20">

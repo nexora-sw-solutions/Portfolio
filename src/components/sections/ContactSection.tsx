@@ -92,7 +92,7 @@ export function ContactSection() {
               <ScrollReveal direction="left" delay={0.1}>
                 <a 
                   href={`mailto:${companyDetails.contact.email}`}
-                  className="p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/10 hover:border-primary/20 backdrop-blur-md transition-all duration-300 flex items-start gap-4 shadow-sm"
+                  className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/30 transition-all duration-300 flex items-start gap-4 shadow-sm"
                 >
                   <span className="p-3 rounded-xl bg-primary/10 text-primary">
                     <Mail className="w-5 h-5" />
@@ -109,7 +109,7 @@ export function ContactSection() {
               <ScrollReveal direction="left" delay={0.2}>
                 <a 
                   href={`tel:${companyDetails.contact.phone}`}
-                  className="p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/10 hover:border-primary/20 backdrop-blur-md transition-all duration-300 flex items-start gap-4 shadow-sm"
+                  className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/30 transition-all duration-300 flex items-start gap-4 shadow-sm"
                 >
                   <span className="p-3 rounded-xl bg-primary/10 text-primary">
                     <Phone className="w-5 h-5" />
@@ -124,7 +124,7 @@ export function ContactSection() {
               </ScrollReveal>
 
               <ScrollReveal direction="left" delay={0.3}>
-                <div className="p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/10 backdrop-blur-md flex items-start gap-4 shadow-sm">
+                <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-start gap-4 shadow-sm">
                   <span className="p-3 rounded-xl bg-primary/10 text-primary">
                     <Globe className="w-5 h-5" />
                   </span>

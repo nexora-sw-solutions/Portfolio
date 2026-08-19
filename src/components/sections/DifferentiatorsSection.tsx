@@ -19,7 +19,7 @@ export function DifferentiatorsSection() {
   return (
     <section
       id="why-us"
-      className="py-24 md:py-32 px-6 md:px-8 relative bg-white dark:bg-slate-950"
+      className="py-24 md:py-32 px-6 md:px-8 relative bg-slate-50 dark:bg-slate-950"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeading
@@ -32,7 +32,7 @@ export function DifferentiatorsSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {companyDetails.differentiators.map((diff, idx) => (
             <ScrollReveal key={idx} direction="up" delay={idx * 0.1} className="h-full">
-              <div className="p-8 md:p-10 rounded-3xl border border-slate-200/50 dark:border-slate-800/40 bg-slate-50/50 dark:bg-slate-900/10 backdrop-blur-md hover:bg-white dark:hover:bg-slate-900/40 hover:border-primary/20 dark:hover:border-primary/10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full group text-left">
+              <div className="p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/30 dark:hover:border-primary/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full group text-left">
                 <div>
                   {/* Icon Sphere */}
                   <div className="p-4 rounded-2xl bg-primary/10 dark:bg-primary/20 text-primary w-fit group-hover:scale-105 transition-transform duration-300">

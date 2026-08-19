@@ -62,7 +62,7 @@ export function ProcessSection() {
                 >
                   {/* Step Bubble */}
                   <div className={cn(
-                    "h-12 w-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 font-extrabold text-sm backdrop-blur-md shadow-md",
+                    "h-12 w-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 font-extrabold text-sm shadow-md",
                     isActive
                       ? "border-primary bg-primary text-white scale-110 shadow-md shadow-primary/20"
                       : isPast
@@ -97,7 +97,7 @@ export function ProcessSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="h-full p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-850 bg-slate-50/50 dark:bg-slate-900/40 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col justify-between text-left"
+                className="h-full p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col justify-between text-left"
               >
                 <div>
                   <div className="flex items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-5 mb-6">

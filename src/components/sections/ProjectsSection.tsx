@@ -111,7 +111,7 @@ export function ProjectsSection() {
                     animate="visible"
                     exit="exit"
                     onClick={() => setActiveProject(project)}
-                    className="group rounded-3xl border border-slate-200/60 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/30 backdrop-blur-md overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-cyan/40 dark:hover:border-brand-cyan/40 hover-brand-glow hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full"
+                    className="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-cyan/40 dark:hover:border-brand-cyan/40 hover-brand-glow hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full"
                   >
                     {/* Project Image Wrapper */}
                     <div className="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
@@ -184,7 +184,7 @@ export function ProjectsSection() {
               initial="hidden"
               animate="visible"
               onClick={() => setActiveProject(projects[0])}
-              className="group w-full max-w-4xl rounded-3xl border border-slate-200/60 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/30 backdrop-blur-md overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-cyan/40 dark:hover:border-brand-cyan/40 hover-brand-glow hover:-translate-y-1.5 transition-all duration-300 grid grid-cols-1 md:grid-cols-12"
+              className="group w-full max-w-4xl rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:border-brand-cyan/40 dark:hover:border-brand-cyan/40 hover-brand-glow hover:-translate-y-1.5 transition-all duration-300 grid grid-cols-1 md:grid-cols-12"
             >
               {/* Project Image Wrapper */}
               <div className="relative aspect-video md:aspect-auto md:col-span-6 w-full min-h-[300px] overflow-hidden bg-slate-100 dark:bg-slate-950 border-b md:border-b-0 md:border-r border-slate-200/60 dark:border-slate-800/40">
