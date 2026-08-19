@@ -117,6 +117,27 @@ export function ProcessSection() {
                   <p className="text-sm sm:text-base text-slate-700 dark:text-slate-350 leading-relaxed font-medium">
                     {activeStepData.description}
                   </p>
+
+                  {/* Key Activities Checklist */}
+                  <div className="mt-8 space-y-3">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-800 dark:text-slate-500 mb-2 block">
+                      Key Activities
+                    </span>
+                    {activeStepData.keyActivities.map((activity, idx) => (
+                      <motion.div
+                        key={`${activeStepData.step}-${idx}`}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <Icons.CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-350 leading-snug">
+                          {activity}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-8">

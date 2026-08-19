@@ -16,10 +16,10 @@ export const services: ServiceItem[] = [
     description: "High-performance, scalable web systems designed to meet complex operational needs and drive digital innovation.",
     icon: "Globe",
     features: [
-      "Microservices & Serverless Architectures",
+      "Infinite Cloud Scalability",
       "Real-time Data Synchronization",
-      "High Availability & Autoscaling Systems",
-      "Multi-tenant SaaS Enablement"
+      "High Availability Architecture",
+      "Enterprise Multi-tenant Security"
     ],
     techs: ["React", "Next.js", "Node.js", "TypeScript", "ASP.NET Core"],
     useCase: "Ideal for organizations migrating legacy systems to modern web interfaces or launching heavy-duty web services.",
@@ -31,10 +31,10 @@ export const services: ServiceItem[] = [
     description: "Premium cross-platform and native mobile experiences that engage users and deliver seamless offline-first capabilities.",
     icon: "Smartphone",
     features: [
-      "Offline-first Architecture",
-      "Biometric Authentication & Security",
-      "Custom UI/UX Animations",
-      "Geofencing & Hardware Integration"
+      "Seamless Offline Functionality",
+      "Bank-grade Biometric Security",
+      "Premium Interactive Experiences",
+      "Advanced Device Integration"
     ],
     techs: ["Flutter", "React Native", "TypeScript", "Dart", "Swift/Kotlin"],
     useCase: "Tailored for consumer-facing apps, enterprise field operations, and high-performance mobile utilities.",
@@ -46,10 +46,10 @@ export const services: ServiceItem[] = [
     description: "End-to-end cloud-hosted software products with subscription management, high security, and clean analytics interfaces.",
     icon: "Layers",
     features: [
-      "Stripe/Payment Gateway Integration",
-      "Role-Based Access Control (RBAC)",
-      "Interactive Dashboards",
-      "Automated Billing & Reporting"
+      "Automated Global Payments",
+      "Granular User Permissions",
+      "Real-time Analytics Dashboards",
+      "Zero-touch Subscription Billing"
     ],
     techs: ["React", "Next.js", "Tailwind CSS", "Zod", "PostgreSQL"],
     useCase: "Perfect for tech startups and enterprises launching new subscription-based services or analytical control hubs.",
@@ -62,9 +62,9 @@ export const services: ServiceItem[] = [
     icon: "Database",
     features: [
       "Automated Resource Allocation",
-      "Inventory & Asset Tracking",
-      "Compliance & Financial Reporting",
-      "Secure API Integrations"
+      "Real-time Inventory Tracking",
+      "Automated Financial Compliance",
+      "Seamless Third-party Integrations"
     ],
     techs: ["ASP.NET Core", "SQL Server", "React", "Azure", "Docker"],
     useCase: "Designed for mid-to-large scale enterprises requiring seamless inventory, resource, and employee tracking systems.",
@@ -91,10 +91,10 @@ export const services: ServiceItem[] = [
     description: "Replacing repetitive manual workflows with intelligent automated software bots, triggers, and integrations.",
     icon: "Cpu",
     features: [
-      "Custom Workflow Automation (CI/CD style)",
-      "Automated Invoice & Email Triggering",
-      "AI-driven Data Extraction & OCR",
-      "Legacy System API Wrapping"
+      "End-to-end Workflow Automation",
+      "Zero-touch Invoice Processing",
+      "Intelligent Document Extraction",
+      "Legacy System Modernization"
     ],
     techs: ["Node.js", "Python", "AWS Lambda", "Azure Functions", "Docker"],
     useCase: "Optimized for operations teams wanting to reduce overhead, eliminate human error, and accelerate turnaround times.",
@@ -121,10 +121,10 @@ export const services: ServiceItem[] = [
     description: "Bespoke software developed from the ground up to solve unique business bottlenecks where off-the-shelf software falls short.",
     icon: "Wrench",
     features: [
-      "Deep Domain Business Analysis",
-      "Bespoke System Architecture Design",
-      "Proprietary Algorithm Implementation",
-      "Long-term Support & Security Patches"
+      "In-depth Workflow Analysis",
+      "Purpose-built System Architecture",
+      "Proprietary Business Logic",
+      "Proactive Long-term Maintenance"
     ],
     techs: ["ASP.NET Core", "Node.js", "PostgreSQL", "React", "Docker"],
     useCase: "For specialized businesses with unique workflow requirements that standard ERPs or software products cannot support.",

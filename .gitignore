@@ -45,3 +45,12 @@ next-env.d.ts
 .gemini
 .agents
 
+# Large media & archives
+*.mp4
+*.mov
+*.webm
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z

@@ -61,7 +61,7 @@ export function HeroSection() {
 
           {/* Subheading */}
           <p className="text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-400 max-w-2xl font-medium leading-relaxed">
-            We design and develop custom software solutions, web platforms, mobile applications, SaaS products, and enterprise systems that help businesses scale and innovate.
+            We engineer custom digital platforms that streamline operations, eliminate manual bottlenecks, and give you a scalable foundation for long-term growth.
           </p>
 
           {/* Actions */}
@@ -100,9 +100,9 @@ export function HeroSection() {
                 <Code className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-base">Elite Custom Software</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white text-base">Bespoke Digital Solutions</h3>
                 <p className="text-xs text-slate-700 dark:text-slate-400 mt-1 leading-relaxed">
-                  Tailored web platforms, POS terminals, ERP engines, and cross-platform mobile apps.
+                  Tailored platforms and enterprise systems mapped perfectly to your unique business workflows.
                 </p>
               </div>
             </div>
@@ -120,9 +120,9 @@ export function HeroSection() {
                 <Terminal className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-base">Connected Technology</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white text-base">Scalable Architecture</h3>
                 <p className="text-xs text-slate-700 dark:text-slate-400 mt-1 leading-relaxed">
-                  Engineered with Next.js, React, ASP.NET Core, PostgreSQL, AWS, and Azure clouds.
+                  Enterprise-grade digital infrastructure engineered for high availability and robust security.
                 </p>
               </div>
             </div>
@@ -140,9 +140,9 @@ export function HeroSection() {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-base">Security & SLA Support</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white text-base">Secure & Supported</h3>
                 <p className="text-xs text-slate-700 dark:text-slate-400 mt-1 leading-relaxed">
-                  ISO standard encryption frameworks with continuous support contracts.
+                  Bank-grade data protection backed by proactive, 24/7 maintenance contracts.
                 </p>
               </div>
             </div>
