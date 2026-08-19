@@ -9,7 +9,7 @@ export interface ProjectItem {
   challenge: string;
   solution: string;
   highlights: string[];
-  github?: string;
+
 }
 
 export const projects: ProjectItem[] = [
@@ -46,6 +46,6 @@ export const projects: ProjectItem[] = [
       "Real-time tracking of vehicle stock, status, and pricing",
       "Interactive data visualization with Recharts and React Big Calendar"
     ],
-    github: "https://github.com/rahulkavishka/ApexDrive-Bot"
+
   }
 ];

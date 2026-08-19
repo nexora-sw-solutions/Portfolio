@@ -2,7 +2,8 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import { ArrowRight, Code, ShieldCheck, Sparkles, Terminal } from "lucide-react";
+import { ArrowRight, Code, ShieldCheck, Terminal } from "lucide-react";
+import { SectionAccent } from "../shared/Decorations/SectionAccent";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "../shared/ScrollReveal";
 
@@ -43,7 +44,7 @@ export function HeroSection() {
           
           {/* Tagline */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-slate-100 dark:bg-slate-800/80 text-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 shadow-sm backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-primary" />
+            <SectionAccent className="w-3.5 h-3.5 text-primary" />
             <span>Premium Engineering Studio</span>
           </div>
 

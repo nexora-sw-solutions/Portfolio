@@ -12,7 +12,6 @@ export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Tech Stack", href: "#tech-stack" },
   { label: "Process", href: "#process" },
   { label: "About Us", href: "#about" },
   { label: "Contact", href: "#contact" }
@@ -64,10 +63,10 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
           isScrolled 
-            ? "py-4 bg-white/70 dark:bg-slate-950/75 border-b border-slate-200/50 dark:border-slate-800/40 backdrop-blur-xl shadow-lg shadow-slate-100/10 dark:shadow-none" 
-            : "bg-transparent"
+            ? "py-4 bg-white/80 dark:bg-slate-950/80 border-slate-900/10 dark:border-brand-blue/20 backdrop-blur-xl shadow-sm" 
+            : "py-6 bg-transparent border-transparent shadow-none"
         )}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
@@ -78,7 +77,7 @@ export function Navbar() {
             className="flex items-center gap-2.5 group"
             id="navbar-logo"
           >
-            <div className="relative flex items-center justify-center p-1.5 rounded-lg bg-slate-950/90 dark:bg-transparent shadow-md shadow-brand-blue/10 group-hover:brand-glow transition-all duration-300">
+            <div className="relative flex items-center justify-center p-1.5 rounded-lg group-hover:brand-glow transition-all duration-300">
               <img 
                 src="/images/Logo/Logo%20Horizontal%20-%20White.png" 
                 alt="Nexora Solutions" 

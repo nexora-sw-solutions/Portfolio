@@ -6,7 +6,7 @@ import { SectionHeading } from "../shared/SectionHeading";
 import { ScrollReveal } from "../shared/ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, ShieldCheck, CheckCircle2, ChevronRight } from "lucide-react";
-import { Github } from "@/components/shared/SocialIcons";
+
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useSmoothScroll } from "@/providers/SmoothScrollProvider";
@@ -399,32 +399,6 @@ export function ProjectsSection() {
 
                     {/* Direct Contact Button */}
                     <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
-                      {activeProject.github ? (
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <a
-                            href={activeProject.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex flex-1 items-center justify-center py-3 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300 gap-2 border border-slate-200 dark:border-slate-700"
-                          >
-                            <span>View Source</span>
-                            <Github className="w-3.5 h-3.5" />
-                          </a>
-                          <a
-                            href="#contact"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setActiveProject(null);
-                              const target = document.querySelector("#contact");
-                              if (target) target.scrollIntoView({ behavior: "smooth" });
-                            }}
-                            className="inline-flex flex-1 items-center justify-center py-3 rounded-xl text-xs font-bold text-white bg-slate-900 dark:bg-white dark:text-slate-950 hover:brand-bg-gradient hover:text-white hover-brand-glow transition-all duration-300 gap-2"
-                          >
-                            <span>Inquire</span>
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
-                        </div>
-                      ) : (
                         <>
                           <p className="text-xs text-slate-700 dark:text-slate-400 leading-normal mb-3.5">
                             Need a similar system designed for your operations?
@@ -443,7 +417,6 @@ export function ProjectsSection() {
                             <ExternalLink className="w-3.5 h-3.5" />
                           </a>
                         </>
-                      )}
                     </div>
                   </div>
                 </div>

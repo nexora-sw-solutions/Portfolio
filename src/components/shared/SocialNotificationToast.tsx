@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, ArrowRight, Mail } from "lucide-react";
+import { X, ArrowRight, Mail } from "lucide-react";
+import { BrandNode } from "./Decorations/BrandNode";
 
 export function triggerSocialNotification() {
   if (typeof window !== "undefined") {
@@ -94,7 +95,7 @@ export function SocialNotificationToast() {
             <div className="flex items-start gap-4 relative z-10">
               {/* Icon badge */}
               <div className="flex items-center justify-center p-3 rounded-xl bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 dark:from-indigo-500/20 dark:via-purple-500/20 dark:to-pink-500/20 border border-indigo-500/20 text-primary shrink-0 shadow-inner">
-                <Sparkles className="w-5 h-5 animate-pulse" />
+                <BrandNode className="w-5 h-5 text-primary" />
               </div>
 
               {/* Text & Actions */}
