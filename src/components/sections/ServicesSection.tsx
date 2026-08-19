@@ -23,7 +23,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-24 md:py-32 px-6 md:px-8 relative overflow-hidden bg-white dark:bg-slate-950/20"
+      className="py-24 md:py-32 px-6 md:px-8 relative overflow-hidden bg-white dark:bg-slate-950"
     >
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-primary/10 dark:bg-primary/2.5 blur-[120px] pointer-events-none -translate-y-1/2" />
@@ -97,7 +97,7 @@ export function ServicesSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -25 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="h-full rounded-3xl border border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900/65 backdrop-blur-md p-10 flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
+                className="h-full rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-10 flex flex-col justify-between shadow-sm relative overflow-hidden"
               >
                 {/* Background soft lighting */}
                 <div className="absolute -top-1/4 -right-1/4 w-[350px] h-[350px] rounded-full bg-primary/10 dark:bg-primary/5 blur-[80px] pointer-events-none animate-pulse" />

@@ -35,7 +35,7 @@ export function MetricsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
           {companyDetails.stats.map((stat, idx) => (
             <ScrollReveal key={idx} direction="up" delay={idx * 0.1} className="h-full w-full">
-              <div className="p-6 md:p-8 rounded-2xl border border-slate-200/50 dark:border-slate-800/40 bg-white dark:bg-slate-900/35 backdrop-blur-md shadow-sm text-center flex flex-col justify-center h-full hover:border-primary/20 transition-all duration-300">
+              <div className="p-6 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm text-center flex flex-col justify-center h-full hover:border-primary/30 transition-all duration-300">
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-primary to-indigo-500 bg-clip-text text-transparent">
                   {stat.value}
                 </span>
