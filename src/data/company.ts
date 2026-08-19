@@ -11,28 +11,30 @@ export const companyDetails = {
   mission: "To engineer premium digital tools and software platforms that establish clear operational advantages, security, and growth for forward-thinking businesses.",
   vision: "To become the global standard for elite custom software engineering, recognized for technical excellence, robust systems, and striking user interfaces.",
 
-  values: [
+  differentiators: [
     {
-      title: "Technical Excellence",
-      description: "We write clean, strictly-typed, scalable code that stands the test of time and handles extreme traffic loads seamlessly.",
-      icon: "Cpu"
+      title: "Direct Engineering Collaboration",
+      description: "You work directly with the senior engineers building your product. We eliminate account managers and middle-men to ensure rapid feedback, zero miscommunication, and complete alignment with your business goals.",
+      icon: "Users"
     },
     {
-      title: "Security & Trust First",
-      description: "From database partitioning to API request encryption, security is integrated into our application blueprints from day one.",
-      icon: "ShieldAlert"
+      title: "Structured, Predictable Delivery",
+      description: "We follow a rigorous, transparent workflow that eliminates uncertainty. From discovery to deployment, you have complete visibility into our progress, ensuring your product is delivered on time and on budget.",
+      icon: "Milestone",
+      link: "#process",
+      linkText: "See our Workflow of Excellence →"
     },
     {
-      title: "Innovation Driven",
-      description: "We continually adopt modern web standards, serverless paradigms, and 3D web interfaces to keep our clients ahead of the curve.",
-      icon: "Lightbulb"
-    },
-    {
-      title: "Long-term Support",
-      description: "We build lasting relationships, standing by our software with strong SLAs, regular updates, and responsive maintenance.",
+      title: "Bank-Grade IP & Data Protection",
+      description: "We treat your intellectual property with absolute confidentiality. Enterprise-grade security protocols, secure infrastructure, and strict data privacy are baked into your software's architecture from day one.",
       icon: "ShieldCheck"
+    },
+    {
+      title: "Evolution, Not Just Deployment",
+      description: "Our relationship doesn't end when your product goes live. We offer dedicated maintenance agreements to proactively monitor performance, push security updates, and continuously evolve your software.",
+      icon: "Infinity"
     }
-  ] as CompanyValue[],
+  ],
 
   contact: {
     email: "contact@mail.nexorasoftwaresolution.com",
