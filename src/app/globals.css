@@ -163,3 +163,25 @@ html.lenis body {
   border-radius: inherit;
   background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-blue) 50%, var(--brand-pink) 100%);
 }
+
+/* Custom Floating Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-delayed {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed ease-in-out infinite;
+  animation-delay: 2s;
+}
