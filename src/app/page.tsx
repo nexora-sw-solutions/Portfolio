@@ -17,7 +17,7 @@ export default function Home() {
       <TechMarquee />
       <ServicesSection />
       <DifferentiatorsSection />
-      <ProjectsSection />
+      <ProjectsSection limit={4} showFilters={false} />
       <ProcessSection />
       <TestimonialsSection />
       <AboutSection />
