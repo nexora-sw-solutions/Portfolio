@@ -95,8 +95,8 @@ export function MobileMenu({ onClose, onLinkClick, activeSection }: MobileMenuPr
         
         <motion.div variants={itemVariants} className="pt-2">
           <a
-            href="#contact"
-            onClick={(e) => onLinkClick(e, "#contact")}
+            href="/#contact"
+            onClick={(e) => onLinkClick(e, "/#contact")}
             className="inline-flex w-full items-center justify-center py-4 rounded-xl text-base font-bold text-white bg-slate-900 dark:bg-white dark:text-slate-950 hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all cursor-pointer"
           >
             Start Your Project

@@ -7,22 +7,26 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./MobileMenu";
+import { usePathname, useRouter } from "next/navigation";
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Process", href: "#process" },
-  { label: "About Us", href: "#about" },
-  { label: "Contact", href: "#contact" }
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Process", href: "/#process" },
+  { label: "About Us", href: "/#about" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
+  const pathname = usePathname();
+  const router = useRouter();
+  
+  const sectionIds = navLinks.map((link) => link.href.replace("/#", "").replace("#", ""));
   const activeSection = useActiveSection(sectionIds);
 
   useEffect(() => {
@@ -54,9 +58,17 @@ export function Navbar() {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+    const targetId = href.replace("/#", "").replace("#", "");
+    
+    if (pathname === "/") {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      } else if (targetId === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } else {
+      router.push(`/#${targetId}`);
     }
   };
 
