@@ -5,6 +5,7 @@ import { CheckCircle2, ExternalLink, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import AATSShowcase from "@/components/sections/AATSShowcase";
 import ApexDriveShowcase from "@/components/sections/ApexDriveShowcase";
+import ProjectShowcase from "@/components/sections/ProjectShowcase";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -43,7 +44,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
         ) : project.id === "apexdrive-crm" ? (
           <ApexDriveShowcase project={project} />
         ) : (
-          <div className="relative w-full aspect-video md:aspect-[2.5/1] overflow-hidden bg-slate-950">
+          <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden bg-slate-950">
             <Image
               src={project.image}
               alt={project.title}
@@ -121,25 +122,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
 
         </div>
 
-        {/* Phase 3 Placeholder (Project Showcase) */}
-        <div className="w-full bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/50 dark:border-slate-800/50 py-20 md:py-28">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">04 / Product</h3>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">Project Showcase</h2>
-            </div>
-            
-            {/* Temporary Placeholder Grid using existing image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-md">
-                <Image src={project.image} alt={`${project.title} Screenshot 1`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top opacity-90" />
-              </div>
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-md">
-                <Image src={project.image} alt={`${project.title} Screenshot 2`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center opacity-90" />
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Phase 3 Project Showcase (Asymmetric Grid with Lightbox) */}
+        {project.showcase && (
+          <ProjectShowcase showcase={project.showcase} />
+        )}
 
         {/* Results & Tech Stack */}
         <div className="w-full max-w-5xl mx-auto px-6 py-20 md:py-32 flex flex-col gap-16 md:gap-24">
