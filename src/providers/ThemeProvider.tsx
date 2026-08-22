@@ -16,10 +16,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // TEMPORARY: Force dark theme for current development stage
     // Load from local storage or system preference
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+    // const savedTheme = localStorage.getItem("theme") as Theme | null;
+    // const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+    
+    const initialTheme = "dark";
 
     setTheme(initialTheme);
     setMounted(true);

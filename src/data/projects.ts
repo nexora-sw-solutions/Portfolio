@@ -1,3 +1,9 @@
+export interface ShowcaseImage {
+  src: string;
+  title: string;
+  caption: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -9,7 +15,11 @@ export interface ProjectItem {
   challenge: string;
   solution: string;
   highlights: string[];
-  github?: string;
+  showcase?: {
+    primary: ShowcaseImage;
+    secondary: ShowcaseImage;
+    tertiary: ShowcaseImage;
+  };
 }
 
 export const projects: ProjectItem[] = [
@@ -18,7 +28,7 @@ export const projects: ProjectItem[] = [
     title: "AATS Audit Software",
     category: "Enterprise Software",
     description: "A secure, offline-first desktop and cloud platform engineered for seamless audit management, compliance tracking, and evidence synchronization.",
-    image: "/Projects/AATS/AATS_Dashboard.png",
+    image: "/images/projects/AATS/AATS_Dashboard.png",
     technologies: ["C# 14 / .NET 10", "Avalonia UI", "ASP.NET Core", "SQLite & SQLCipher", "PostgreSQL", "Cloudflare R2"],
     impact: "Streamlined audit workflows with seamless offline capabilities, managing 100k+ rows of data smoothly while maintaining strict security compliance.",
     challenge: "Auditors working offline or in remote locations struggled with slow performance on massive datasets and data conflicts when syncing sensitive evidence files with the central database.",
@@ -28,7 +38,24 @@ export const projects: ProjectItem[] = [
       "Blazing fast bi-directional sync with intelligent conflict resolution",
       "Secure local database encryption (256-bit AES via SQLCipher)",
       "Automated client notifications and background delta updates"
-    ]
+    ],
+    showcase: {
+      primary: {
+        src: "/images/projects/AATS/AATS_Dashboard.png",
+        title: "Comprehensive Audit Dashboard",
+        caption: "Centralizes compliance tracking, massive data grids, and offline sync status in one unified view."
+      },
+      secondary: {
+        src: "/images/projects/AATS/AATS_Dashboard.png",
+        title: "Offline-First Sync Engine",
+        caption: "Handles 100k+ rows locally, resolving conflicts and pushing deltas to the cloud seamlessly."
+      },
+      tertiary: {
+        src: "/images/projects/AATS/AATS_Dashboard.png",
+        title: "AES-256 Local Encryption",
+        caption: "Ensures all audit evidence is encrypted at rest using SQLCipher for strict enterprise compliance."
+      }
+    }
   },
   {
     id: "apexdrive-crm",
@@ -46,6 +73,22 @@ export const projects: ProjectItem[] = [
       "Real-time tracking of vehicle stock, status, and pricing",
       "Interactive data visualization with Recharts and React Big Calendar"
     ],
-    github: "https://github.com/rahulkavishka/ApexDrive-Bot"
+    showcase: {
+      primary: {
+        src: "/images/projects/Apex/Dashboard-summary.webp",
+        title: "Intelligent CRM Dashboard",
+        caption: "Real-time visibility into inventory, live inquiries, and autonomous agent activities."
+      },
+      secondary: {
+        src: "/images/projects/Apex/Sales.webp",
+        title: "Real-Time Deal Pipeline & Lead Management",
+        caption: "Track deal progression from initial contact to closed sale with deep insights and instant notifications."
+      },
+      tertiary: {
+        src: "/images/projects/Apex/Leads.webp",
+        title: "Automated Financial Desking & Deal Structuring",
+        caption: "Streamline payment calculations, trade-ins, and financing options to close deals faster and more accurately."
+      }
+    }
   }
 ];

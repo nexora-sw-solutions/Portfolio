@@ -23,7 +23,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-24 md:py-32 px-6 md:px-8 relative overflow-hidden bg-white dark:bg-slate-950/20"
+      className="py-24 md:py-32 px-6 md:px-8 relative overflow-hidden bg-white dark:bg-slate-950"
     >
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-primary/10 dark:bg-primary/2.5 blur-[120px] pointer-events-none -translate-y-1/2" />
@@ -97,7 +97,7 @@ export function ServicesSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -25 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="h-full rounded-3xl border border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900/65 backdrop-blur-md p-10 flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden"
+                className="h-full rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-10 flex flex-col justify-between shadow-sm relative overflow-hidden"
               >
                 {/* Background soft lighting */}
                 <div className="absolute -top-1/4 -right-1/4 w-[350px] h-[350px] rounded-full bg-primary/10 dark:bg-primary/5 blur-[80px] pointer-events-none animate-pulse" />
@@ -159,8 +159,19 @@ export function ServicesSection() {
                   </div>
                 </div>
 
+                {/* Expected Business Impact Block */}
+                <div className="relative z-10 mt-auto mb-6 p-5 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border-l-2 border-primary">
+                  <h6 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1.5 flex items-center gap-1.5">
+                    <Icons.TrendingUp className="w-3.5 h-3.5" />
+                    Expected Business Impact
+                  </h6>
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300 italic">
+                    "{activeService.expectedOutcome}"
+                  </p>
+                </div>
+
                 {/* Bottom Use-case & CTA */}
-                <div className="relative z-10 border-t border-slate-100 dark:border-slate-800 pt-6 mt-6 flex items-center justify-between gap-6">
+                <div className="relative z-10 border-t border-slate-100 dark:border-slate-800 pt-6 flex items-center justify-between gap-6">
                   <div className="max-w-[70%]">
                     <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-800 dark:text-slate-500 block">
                       Typical Use Case
@@ -264,6 +275,16 @@ export function ServicesSection() {
                               </span>
                             ))}
                           </div>
+                        </div>
+
+                        <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-800/40 border-l-2 border-primary">
+                          <h6 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1.5 flex items-center gap-1.5">
+                            <Icons.TrendingUp className="w-3 h-3" />
+                            Expected Impact
+                          </h6>
+                          <p className="text-xs font-medium text-slate-700 dark:text-slate-300 italic">
+                            "{service.expectedOutcome}"
+                          </p>
                         </div>
 
                         <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">

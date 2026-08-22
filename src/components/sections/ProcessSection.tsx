@@ -62,7 +62,7 @@ export function ProcessSection() {
                 >
                   {/* Step Bubble */}
                   <div className={cn(
-                    "h-12 w-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 font-extrabold text-sm backdrop-blur-md shadow-md",
+                    "h-12 w-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 font-extrabold text-sm shadow-md",
                     isActive
                       ? "border-primary bg-primary text-white scale-110 shadow-md shadow-primary/20"
                       : isPast
@@ -97,7 +97,7 @@ export function ProcessSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="h-full p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-850 bg-slate-50/50 dark:bg-slate-900/40 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col justify-between text-left"
+                className="h-full p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col justify-between text-left"
               >
                 <div>
                   <div className="flex items-center gap-4 border-b border-slate-100 dark:border-slate-800 pb-5 mb-6">
@@ -117,6 +117,27 @@ export function ProcessSection() {
                   <p className="text-sm sm:text-base text-slate-700 dark:text-slate-350 leading-relaxed font-medium">
                     {activeStepData.description}
                   </p>
+
+                  {/* Key Activities Checklist */}
+                  <div className="mt-8 space-y-3">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-800 dark:text-slate-500 mb-2 block">
+                      Key Activities
+                    </span>
+                    {activeStepData.keyActivities.map((activity, idx) => (
+                      <motion.div
+                        key={`${activeStepData.step}-${idx}`}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <Icons.CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-350 leading-snug">
+                          {activity}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-8">

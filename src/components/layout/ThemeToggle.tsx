@@ -8,6 +8,9 @@ import { motion, AnimatePresence } from "framer-motion";
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
+  // TEMPORARY: Hide theme toggle during development
+  return null;
+
   return (
     <button
       onClick={toggleTheme}
