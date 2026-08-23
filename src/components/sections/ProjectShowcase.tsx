@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
@@ -65,12 +65,13 @@ export default function ProjectShowcase({ showcase }: ProjectShowcaseProps) {
                   <div className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-800" />
                 </div>
                 <div className="relative w-full h-[calc(100%-35px)]">
-                  <Image
+                  <CldImage
                     src={showcase.primary.src}
                     alt={showcase.primary.title}
                     fill
                     sizes="(max-width: 1280px) 100vw, 1280px"
                     className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ objectFit: 'cover' }}
                   />
                   {/* Subtle hover overlay to indicate clickability */}
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors duration-300" />
@@ -95,12 +96,13 @@ export default function ProjectShowcase({ showcase }: ProjectShowcaseProps) {
                   className="group relative w-full h-[280px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg cursor-zoom-in focus:outline-none focus:ring-4 focus:ring-brand-cyan/50 transition-all text-left"
                   aria-label={`View full screen image of ${showcase.secondary.title}`}
                 >
-                  <Image
+                  <CldImage
                     src={showcase.secondary.src}
                     alt={showcase.secondary.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 60vw"
                     className="object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ objectFit: 'cover' }}
                   />
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors duration-300" />
                 </button>
@@ -121,12 +123,13 @@ export default function ProjectShowcase({ showcase }: ProjectShowcaseProps) {
                   className="group relative w-full h-[280px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg cursor-zoom-in focus:outline-none focus:ring-4 focus:ring-brand-cyan/50 transition-all text-left"
                   aria-label={`View full screen image of ${showcase.tertiary.title}`}
                 >
-                  <Image
+                  <CldImage
                     src={showcase.tertiary.src}
                     alt={showcase.tertiary.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ objectFit: 'cover' }}
                   />
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors duration-300" />
                 </button>
@@ -183,13 +186,13 @@ export default function ProjectShowcase({ showcase }: ProjectShowcaseProps) {
                 className="relative w-full h-full flex items-center justify-center pointer-events-auto mt-12 mb-8 md:my-0"
                 onClick={(e) => e.stopPropagation()} // Prevent click-through closing
               >
-                <Image
+                <CldImage
                   src={selectedImage.src}
                   alt={selectedImage.title}
                   fill
                   className="object-contain"
                   sizes="100vw"
-                  quality={100}
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
 
