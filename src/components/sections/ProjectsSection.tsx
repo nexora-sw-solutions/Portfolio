@@ -6,7 +6,7 @@ import { SectionHeading } from "../shared/SectionHeading";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Enterprise Software", "Retail Tech", "Logistics", "E-Commerce", "SaaS", "Healthcare", "Operations"];
@@ -98,13 +98,14 @@ export function ProjectsSection({ limit, showFilters = true }: ProjectsSectionPr
                         <ChevronRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
-                    <Image
+                    <CldImage
                       src={project.image}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-103"
                       priority={index < 3}
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
 

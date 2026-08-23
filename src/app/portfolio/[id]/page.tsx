@@ -1,6 +1,6 @@
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import { CheckCircle2, ExternalLink, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import AATSShowcase from "@/components/sections/AATSShowcase";
@@ -45,13 +45,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
           <ApexDriveShowcase project={project} />
         ) : (
           <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden bg-slate-950">
-            <Image
+            <CldImage
               src={project.image}
               alt={project.title}
               fill
               sizes="100vw"
               className="object-cover object-top opacity-60"
               priority
+              style={{ objectFit: 'cover' }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent flex items-center p-6 md:p-16 lg:p-24">
               <div className="max-w-3xl">
