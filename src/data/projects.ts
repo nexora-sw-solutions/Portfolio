@@ -28,7 +28,7 @@ export const projects: ProjectItem[] = [
     title: "AATS Audit Software",
     category: "Enterprise Software",
     description: "A secure, offline-first desktop and cloud platform engineered for seamless audit management, compliance tracking, and evidence synchronization.",
-    image: "/images/projects/AATS/AATS_Dashboard.png",
+    image: "AATS_Dashboard.png",
     technologies: ["C# 14 / .NET 10", "Avalonia UI", "ASP.NET Core", "SQLite & SQLCipher", "PostgreSQL", "Cloudflare R2"],
     impact: "Streamlined audit workflows with seamless offline capabilities, managing 100k+ rows of data smoothly while maintaining strict security compliance.",
     challenge: "Auditors working offline or in remote locations struggled with slow performance on massive datasets and data conflicts when syncing sensitive evidence files with the central database.",
@@ -41,17 +41,17 @@ export const projects: ProjectItem[] = [
     ],
     showcase: {
       primary: {
-        src: "/images/projects/AATS/AATS_Dashboard.png",
+        src: "AATS_Dashboard.png",
         title: "Comprehensive Audit Dashboard",
         caption: "Centralizes compliance tracking, massive data grids, and offline sync status in one unified view."
       },
       secondary: {
-        src: "/images/projects/AATS/AATS_Dashboard.png",
+        src: "AATS_Dashboard.png",
         title: "Offline-First Sync Engine",
         caption: "Handles 100k+ rows locally, resolving conflicts and pushing deltas to the cloud seamlessly."
       },
       tertiary: {
-        src: "/images/projects/AATS/AATS_Dashboard.png",
+        src: "AATS_Dashboard.png",
         title: "AES-256 Local Encryption",
         caption: "Ensures all audit evidence is encrypted at rest using SQLCipher for strict enterprise compliance."
       }
@@ -62,7 +62,7 @@ export const projects: ProjectItem[] = [
     title: "ApexDrive CRM",
     category: "Operations",
     description: "A high-performance CRM built for automotive businesses, featuring AI-powered inventory tracking and autonomous customer engagement.",
-    image: "/images/projects/Apex/dashboard.webp",
+    image: "dashboard.webp",
     technologies: ["React 19", "TypeScript", "Tailwind CSS", "Django", "PostgreSQL", "n8n", "OpenAI API", "EasyOCR"],
     impact: "Automated manual data entry and enabled 24/7 autonomous customer inquiries and test-drive scheduling.",
     challenge: "Car dealerships face inefficiencies with manual vehicle data entry and struggle to handle customer inquiries and test-drive bookings outside of regular business hours.",
@@ -75,17 +75,17 @@ export const projects: ProjectItem[] = [
     ],
     showcase: {
       primary: {
-        src: "/images/projects/Apex/Dashboard-summary.webp",
+        src: "Dashboard-summary.webp",
         title: "Intelligent CRM Dashboard",
         caption: "Real-time visibility into inventory, live inquiries, and autonomous agent activities."
       },
       secondary: {
-        src: "/images/projects/Apex/Sales.webp",
+        src: "Sales.webp",
         title: "Real-Time Deal Pipeline & Lead Management",
         caption: "Track deal progression from initial contact to closed sale with deep insights and instant notifications."
       },
       tertiary: {
-        src: "/images/projects/Apex/Leads.webp",
+        src: "Leads.webp",
         title: "Automated Financial Desking & Deal Structuring",
         caption: "Streamline payment calculations, trade-ins, and financing options to close deals faster and more accurately."
       }

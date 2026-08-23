@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Bot, Cpu, Camera, ArrowUpCircle, Check, Scan, Database } from "lucide-react";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import { ProjectItem } from "@/data/projects";
 
 interface ApexDriveShowcaseProps {
@@ -200,13 +200,14 @@ export default function ApexDriveShowcase({ project }: ApexDriveShowcaseProps) {
 
             {/* Content Area */}
             <div className="relative w-full h-[calc(100%-35px)] bg-slate-950">
-              <Image
+              <CldImage
                 src={project.image}
                 alt="ApexDrive Dashboard"
                 fill
                 sizes="(max-width: 768px) 100vw, 500px"
                 className="object-cover object-top transition-transform duration-500 hover:scale-102"
                 priority
+                style={{ objectFit: 'cover' }}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/1.5 to-white/3 pointer-events-none" />
             </div>
